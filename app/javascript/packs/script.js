@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     readURL(this);
   });
 
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
   $(".upload-button").on("click", function () {
     $(".file-upload").click();
   });

@@ -1,2 +1,25 @@
 module HomeHelper
+  def developers
+    if user_signed_in?
+      'home/partials/developers'
+    else
+      'home/partials/empty'
+    end
+  end
+
+  def links
+    if user_signed_in?
+      'home/partials/nav/dropdown'
+    else
+      'home/partials/nav/auth_links'
+    end
+  end
+
+  def change_state_btn
+    if current_user.online? # defined in user.rb 0 denotes offline, 1 online
+      'home/partials/nav/dropdown/gofflinebtn'
+    else
+      'home/partials/nav/dropdown/gonlinebtn'
+    end
+  end
 end
